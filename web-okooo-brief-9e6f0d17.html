@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澳客 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1e2a3a;
+            line-height: 1.7;
+            padding: 0;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0b1a2e 0%, #1b3046 100%);
+            color: #e8edf3;
+            padding: 80px 24px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: #f4f7fb;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            font-weight: 600;
+            color: #7fc1ff;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        /* 浅色正文区 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 24px 60px;
+        }
+
+        .intro-block {
+            margin: 30px 0 20px;
+            font-size: 1rem;
+        }
+
+        .intro-block p {
+            margin-bottom: 1.2rem;
+        }
+
+        .highlight {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin: 40px 0 36px;
+        }
+
+        .highlight-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px 22px;
+            flex: 1 1 260px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+            border: 1px solid #e6edf6;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+        }
+
+        .highlight-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: #0b1a2e;
+            font-weight: 500;
+            border-left: 4px solid #3a7bd5;
+            padding-left: 12px;
+        }
+
+        .highlight-card p {
+            font-size: 0.95rem;
+            color: #3f4e62;
+            line-height: 1.6;
+        }
+
+        .usage-scenario {
+            background: white;
+            border-radius: 18px;
+            padding: 32px 28px;
+            margin: 30px 0 36px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border: 1px solid #e2eaf3;
+        }
+
+        .usage-scenario h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #0b1a2e;
+            margin-bottom: 18px;
+        }
+
+        .usage-scenario ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .usage-scenario li {
+            position: relative;
+            padding: 10px 0 10px 32px;
+            border-bottom: 1px solid #edf2f9;
+            font-size: 0.98rem;
+        }
+
+        .usage-scenario li:last-child {
+            border-bottom: none;
+        }
+
+        .usage-scenario li::before {
+            content: "▹";
+            position: absolute;
+            left: 8px;
+            color: #3a7bd5;
+            font-weight: bold;
+        }
+
+        .faq-mini {
+            background: white;
+            border-radius: 18px;
+            padding: 28px 28px 20px;
+            margin: 30px 0 20px;
+            border: 1px solid #e2eaf3;
+        }
+
+        .faq-mini h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #0b1a2e;
+            margin-bottom: 16px;
+        }
+
+        .faq-item {
+            margin-bottom: 18px;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #1b3046;
+            margin-bottom: 4px;
+        }
+
+        .faq-item .a {
+            color: #4b5c74;
+            font-size: 0.95rem;
+            padding-left: 12px;
+            border-left: 2px solid #cbdae9;
+        }
+
+        .cta-note {
+            background: #e9f0fa;
+            border-radius: 40px;
+            padding: 16px 28px;
+            margin: 40px 0 20px;
+            text-align: center;
+            font-size: 1rem;
+            color: #1b3046;
+            border: 1px solid #d2e0f0;
+        }
+
+        .cta-note a {
+            color: #1a6fc4;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #1a6fc4;
+        }
+
+        .cta-note a:hover {
+            color: #0b4b8a;
+            border-bottom-style: solid;
+        }
+
+        .footer-note {
+            margin-top: 48px;
+            font-size: 0.85rem;
+            color: #697b92;
+            text-align: center;
+            border-top: 1px solid #dce5ef;
+            padding-top: 28px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            .highlight {
+                flex-direction: column;
+            }
+            .cta-note {
+                padding: 14px 18px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <section class="hero">
+        <h1>认识 <span>澳客</span></h1>
+        <p>一个聚焦数据查阅与信息整合的工具型站点——帮助用户快速定位赛事、比分、统计与相关动态，减少信息检索中的噪音。</p>
+    </section>
+
+    <!-- 浅色正文区 -->
+    <div class="container">
+
+        <!-- 摘要式引入 -->
+        <div class="intro-block">
+            <p>当一个新用户打开 <strong>web-okooo.com</strong>，他首先面对的是一组清晰的功能入口与结构化的数据面板。这里没有花哨的弹窗或过度包装的文案，而是将核心查询路径直接陈列。<strong>澳客</strong> 的设计出发点是“让数据自己说话”，这或许解释了为什么不少用户将其视为日常参考工具之一。</p>
+            <p>从体育赛事结果到联赛积分走势，再到历史交锋数据，<strong>澳客</strong> 提供了一种低门槛的查阅方式：你无需注册即可浏览大部分内容，界面响应速度也保持在合理水平。以下从几个维度说明其特点与适用场景。</p>
+        </div>
+
+        <!-- 亮点卡片 -->
+        <div class="highlight">
+            <div class="highlight-card">
+                <h3>数据密度与结构</h3>
+                <p>页面以表格和索引为主，信息层级直观。同一页面内常聚合多个相关维度，减少页面跳转频次。适合需要横向对比多个指标的用户。</p>
+            </div>
+            <div class="highlight-card">
+                <h3>无干扰查阅体验</h3>
+                <p>广告位置克制，无自动播放视频或强制弹窗。正文区域保持干净排版，使得专注阅读成为可能，尤其适合快速核对信息。</p>
+            </div>
+            <div class="highlight-card">
+                <h3>跨赛季历史数据</h3>
+                <p>支持回溯多个赛季的联赛与杯赛数据，对于研究趋势、回顾经典对阵而言，这是一个实用时间轴。数据更新频率较高。</p>
+            </div>
+        </div>
+
+        <!-- 使用建议 / 场景 -->
+        <div class="usage-scenario">
+            <h2>常见使用场景</h2>
+            <ul>
+                <li><strong>临场参考：</strong>比赛进行中或结束后数分钟内，查看实时比分、红黄牌、换人及技术统计。</li>
+                <li><strong>赛前分析：</strong>查阅主客队近期战绩、交锋记录以及联赛排名变化，辅助形成个人判断。</li>
+                <li><strong>数据积累：</strong>整理某联赛近 5 个赛季的积分走势、得失球分布，用于报告或内容创作。</li>
+                <li><strong>快速导航：</strong>利用首页的联赛/赛事快捷入口，直接进入目标页面，避免多层菜单。</li>
+            </ul>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-mini">
+            <h2>常见疑问摘要</h2>
+            <div class="faq-item">
+                <div class="q">Q：数据来源是否可靠？</div>
+                <div class="a">平台数据主要来自公开赛事统计与授权接口，经过清洗后呈现。建议用做参考，重要决策请核对多方信息。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">Q：是否需要付费？</div>
+                <div class="a">基础数据浏览完全免费，部分深度统计或历史归档可能由第三方提供，页面会有明确标识。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">Q：移动端适配如何？</div>
+                <div class="a">页面采用响应式设计，在手机浏览器上会自适应调整表格与导航，但部分复杂表格仍建议在平板或桌面端获得最佳体验。</div>
+            </div>
+        </div>
+
+        <!-- 可信但克制的访问说明（自然嵌入链接） -->
+        <div class="cta-note">
+            如果你希望直接体验上述功能，可以在浏览器中打开 <a href="https://web-okooo.com">澳客</a>，其首页导航和搜索栏会引导你快速找到目标数据。建议首次使用时先浏览“联赛”或“今日赛程”板块，感受信息组织方式。
+        </div>
+
+        <!-- 脚注 -->
+        <div class="footer-note">
+            <p>本页面为产品说明介绍，内容基于公开信息整理，仅供参考。</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
